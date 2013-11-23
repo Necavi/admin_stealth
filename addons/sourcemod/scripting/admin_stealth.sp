@@ -152,8 +152,8 @@ InvisOff(client, announce=true)
 	SetEntProp(client, Prop_Send, "m_iTeamNum", g_iOldTeam[client]);
 	if(GetClientTeam(client) != SPECTATOR)
 	{
-		SetEntProp(client,Prop_Send,"m_lifeState",0);
-		SetEntProp(client,Prop_Data,"m_takedamage",0);
+		SetEntProp(client, Prop_Send, "m_lifeState", 0);
+		SetEntProp(client, Prop_Data, "m_takedamage", 2);
 		SetEntityMoveType(client, MOVETYPE_ISOMETRIC);	
 		SDKUnhook(client, SDKHook_WeaponCanUse, Event_WeaponCanUse);
 		if(IsPlayerAlive(client))
@@ -177,7 +177,7 @@ InvisOn(client, announce=true)
 	if(GetClientTeam(client) != SPECTATOR)
 	{
 		SetEntProp(client, Prop_Send, "m_lifeState",2);
-		SetEntProp(client, Prop_Data, "m_takedamage",2);	
+		SetEntProp(client, Prop_Data, "m_takedamage",0);	
 		SetEntityMoveType(client, MOVETYPE_NOCLIP);
 		RemoveAllWeapons(client);
 		SDKHook(client, SDKHook_WeaponCanUse, Event_WeaponCanUse);
